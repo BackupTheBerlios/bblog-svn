@@ -1,0 +1,13 @@
+
+Ignore this branch. It's just for me to do a bit of testing before we release 0.7.7.
+
+This branch has the 0.7.7 session management fix. And the branch will be removed when 0.7.7 is released.
+
+
+
+    Bug: bBlog 0.7.x users can log into any other bBlog 0.7.x copy installed on the same domain. This is caused by the
+fact that bBlog::admin_logged_in() only checks whether the user ID in the session is valid, and not whether the session
+itself is legal.
+   Fix: backport of 0.8-svn's admin_logged_in(), userauth() and admin_logout().
+They contain a decent session validity testing, using the BBLOGID random ID.
+This reduces the chance of bypassing the need to login.
