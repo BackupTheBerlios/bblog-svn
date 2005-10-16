@@ -506,7 +506,7 @@ class bBlog extends Smarty {
         function userauth($user, $pass, $setcookie = FALSE) {
 		// Also the nickname and the password need to be taken so that we can "specialize"
 		// the session. This reduces the risk of passing by authentication
-            $query = "SELECT `id`,`nickname`,`password` FROM `".T_AUTHORS."` WHERE `nickname`='".my_addslashes($user)."' AND `password`='".md5($pass)."'";
+            $query = "SELECT `id`,`nickname`,`password` FROM `".T_AUTHORS."` WHERE `nickname`='".my_addslashes($user)."' AND `password`='".$pass."'";
             if (is_object($result = $this->get_row($query))) {
 		session_regenerate_id(); // Renew session ID
                 $_SESSION['user_id'] = $result->id;
