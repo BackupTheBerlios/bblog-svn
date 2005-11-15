@@ -47,7 +47,7 @@ function smarty_modifier_readmore($text, $postid, $readmoretext="read more",$wor
 
         // print wordcount
         if($wordcount) {
-          $text .= '&nbsp;<em>('.count(explode(' ',$textar[$i+1])).' slov)</em>';
+          $text .= '&nbsp;<em>('.count(explode(' ',$textar[$i+1])).' words)</em>';
         }
 
         $cuttingout = true;
